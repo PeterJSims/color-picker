@@ -6,7 +6,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Palette {...SeedColors[3]} />
+				<Palette {...SeedColors[2]} />
 			</div>
 		);
 	}
