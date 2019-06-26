@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ColorBox from './ColorBox';
+//REMEMBER TO LOAD CSS IN A SPECIFIC ORDER!
+import 'rc-slider/assets/index.css';
 import './Palette.css';
 import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
 
 class Palette extends Component {
 	constructor(props) {
@@ -21,7 +22,9 @@ class Palette extends Component {
 		const colorBoxes = colors[level].map((color) => <ColorBox background={color.hex} name={color.name} />);
 		return (
 			<div className="Palette">
-				<Slider defaultValue={level} min={100} step={100} max={900} onAfterChange={this.changeLevel} />
+				<div className="slider">
+					<Slider defaultValue={level} min={100} step={100} max={900} onAfterChange={this.changeLevel} />
+				</div>
 				{/*Navbar goes here! */}
 				<div className="Palette-colors">{colorBoxes}</div>
 				{/* A footer will go here */}
