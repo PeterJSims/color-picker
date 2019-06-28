@@ -5,7 +5,6 @@ import ColorBox from './ColorBox';
 import { withStyles } from '@material-ui/styles';
 import styles from './styles/PaletteStyles.js';
 import { Link } from 'react-router-dom';
-import './ColorBox.css';
 
 class SingleColorPalette extends Component {
 	constructor(props) {
