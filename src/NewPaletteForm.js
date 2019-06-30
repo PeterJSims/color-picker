@@ -81,7 +81,7 @@ class NewPaletteForm extends Component {
 		this.state = {
 			open: true,
 			currentColor: 'teal',
-			colors: [ { color: 'blue', name: 'blue' } ],
+			colors: this.props.palettes[0].colors,
 			newColorName: '',
 			newPaletteName: ''
 		};
@@ -90,6 +90,7 @@ class NewPaletteForm extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.removeColor = this.removeColor.bind(this);
+		this.clearColors = this.clearColors.bind(this);
 	}
 
 	componentDidMount() {
@@ -144,6 +145,10 @@ class NewPaletteForm extends Component {
 			colors: arrayMove(colors, oldIndex, newIndex)
 		}));
 	};
+
+	clearColors() {
+		this.setState({ colors: [] });
+	}
 
 	render() {
 		const { classes } = this.props;
@@ -204,7 +209,7 @@ class NewPaletteForm extends Component {
 					<Typography variant="h4">Design Your Palette</Typography>
 
 					<div>
-						<Button variant="contained" color="secondary">
+						<Button variant="contained" color="secondary" onClick={this.clearColors}>
 							Clear Palette
 						</Button>
 						<Button variant="contained" color="primary">
