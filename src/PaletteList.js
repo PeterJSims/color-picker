@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/styles';
-import { Link } from 'react-router-dom';
-import styles from './styles/PaletteListStyles.js';
+import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
 	goToPalette(id) {
@@ -33,5 +33,4 @@ class PaletteList extends Component {
 		);
 	}
 }
-
 export default withStyles(styles)(PaletteList);
