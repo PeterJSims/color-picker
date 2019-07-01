@@ -11,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm } from 'react-material-ui-form-validator';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
 import styles from './styles/PaletteFormNavStyles';
 
 class PaletteFormNav extends Component {
@@ -58,9 +60,9 @@ class PaletteFormNav extends Component {
 							color="inherit"
 							aria-label="Open drawer"
 							onClick={this.props.handleDrawerOpen}
-							className={classNames(classes.menuButton, open && classes.hide)}
+							className={classNames(classes.menuButton, { [classes.hide]: open })}
 						>
-							<MenuIcon />
+							<ChevronRightIcon />
 						</IconButton>
 						<Typography variant="h6" color="inherit" noWrap>
 							Create A Palette
