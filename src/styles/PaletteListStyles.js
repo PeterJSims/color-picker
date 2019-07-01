@@ -1,12 +1,16 @@
 import sizes from './sizes';
-
+import background from './Wavey-Fingerprint.svg';
 export default {
 	root: {
-		backgroundColor: 'blue',
 		height: '100vh',
 		display: 'flex',
 		alignItems: 'flex-start',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		/* background by SVGBackgrounds.com */
+		backgroundColor: '#000000',
+		backgroundImage: `url(${background})`,
+		/* THIS FIXES THE PROBLEM I COULDN'T SOLVE. DUH! */
+		overflow: 'scroll'
 	},
 	container: {
 		width: '50%',
@@ -36,7 +40,7 @@ export default {
 		width: '100%',
 		display: 'grid',
 		gridTemplateColumns: 'repeat(3, 30%)',
-		gridGap: '2.5rem',
+		gridGap: '2rem',
 		[sizes.down('md')]: {
 			gridTemplateColumns: 'repeat(2, 50%)'
 		},
@@ -44,5 +48,8 @@ export default {
 			gridTemplateColumns: 'repeat(1, 100%)',
 			gridGap: '1rem'
 		}
+	},
+	heading: {
+		fontSize: '2rem'
 	}
 };
